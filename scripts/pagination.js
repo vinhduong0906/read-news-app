@@ -74,12 +74,13 @@ function paginationReset() {
   <a class="page-link" >...</a>
  </li>
  <li class="page-item">
-  <button class="page-link" id="btn-next">Next</button>
+  <button class="page-link next-button" id="btn-next">Next</button>
  </li>`;
   prevBtnEl = document.getElementById("btn-prev");
   nextBtnEl = document.getElementById("btn-next");
   leftDotEl = document.getElementById("left-dot");
   rightDotEl = document.getElementById("right-dot");
+  prevBtnEl.parentElement.classList.add("disabled");
 }
 // //Init page to reset the pagination when take a new search
 function paginationInit() {
@@ -88,8 +89,7 @@ function paginationInit() {
   pageStart = 1;
   pageEnd = 0;
 
-  nextBtnEl.addEventListener("click", nextPage);
-  prevBtnEl.addEventListener("click", prePage);
+
 }
 //Nextpage button click function
 function nextPage() {
@@ -100,7 +100,8 @@ function nextPage() {
 }
 
 //Previous page button click function
-function prePage() {
+function prevPage() {
+  console.log('prev')
   if (Number(currentPage) > 1) {
     document.querySelector(`[data-page='${Number(currentPage) - 1}']`).click();
   }
@@ -167,11 +168,11 @@ async function displayPage(pageId) {
   localStorage.setItem('currentPage', currentPage);
   if (pageType === "search") {
     const searchKey = document.getElementById("input-query").value.trim();
-    newsUrl = `https://gnews.io/api/v4/search?q=${searchKey}&max=${currentSetting.pagesize}&page=${currentPage}&apikey=328585dc62faf671432c5d4c274bef84`
+    newsUrl = `https://gnews.io/api/v4/search?q=${searchKey}&max=${currentSetting.pagesize}&page=${currentPage}&apikey=e30a0ff769da2e16bd45a562f592e383`
   }
   else {
     const category = localStorage.getItem('newsCategory') || 'general';
-    newsUrl = `https://gnews.io/api/v4/top-headlines?category=${category.toLowerCase()}&max=${currentSetting.pagesize}&page=${currentPage}&apikey=328585dc62faf671432c5d4c274bef84`
+    newsUrl = `https://gnews.io/api/v4/top-headlines?category=${category.toLowerCase()}&max=${currentSetting.pagesize}&page=${currentPage}&apikey=e30a0ff769da2e16bd45a562f592e383`
   }
 
   rePaginate(itemEl, lastCurrentPage);

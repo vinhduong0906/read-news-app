@@ -2,6 +2,10 @@ a:hover {
   cursor: pointer;
 }
 
+.disabled {
+  cursor: no-drop !important;
+}
+
 #todo-container>ul {
   max-height: 500px;
   overflow-y: scroll;
