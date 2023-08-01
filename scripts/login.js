@@ -1,4 +1,3 @@
-"use strict";
 
 function logIn(inputUser) {
   if (inputUser.username.trim() === "") {

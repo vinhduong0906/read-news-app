@@ -1,4 +1,3 @@
-"use strict";
 
 //Register process, validate data and write to local
 submidBtnEl.addEventListener("click", function () {

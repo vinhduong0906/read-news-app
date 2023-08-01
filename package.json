@@ -1,5 +1,6 @@
 {
   "homepage": "https://vinhduong0906.github.io/javascript-assignment",
+  "type":"module",
   "scripts": {
     "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
@@ -7,4 +8,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   }
+ 
 }

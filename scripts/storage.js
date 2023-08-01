@@ -9,7 +9,7 @@ const currentUser = parseUser(JSON.parse(getFromStorage(CURRENTKEY))) || "";
 const settingArr = JSON.parse(getFromStorage(SETTINGKEY)) || [];
 const currentSetting = settingArr.find(
   (setting) => setting.username === currentUser.username
-);
+) || { 'pageSize': 8 };
 const todoArr = JSON.parse(getFromStorage(TODO)) || [];
 
 //Save data to local

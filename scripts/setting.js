@@ -1,3 +1,4 @@
+
 const inputPageSizeEl = document.getElementById("input-page-size");
 const currentSettingIndex =
   currentUser &&
@@ -5,7 +6,8 @@ const currentSettingIndex =
 checkLogin();
 
 //load data from user setting to input field
-inputPageSizeEl.value = currentSetting.pagesize;
+
+inputPageSizeEl.value = currentSetting.pagesize || 8;
 
 //Check submit value and save to local
 submidBtnEl.addEventListener("click", function () {

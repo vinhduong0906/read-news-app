@@ -31,7 +31,9 @@ function checkLogin() {
   if (!currentUser) {
     alert("You must login first");
     window.location.href = "../index.html";
+    return 0;
   }
+  return 1;
 }
 
 // Validate data for register user function

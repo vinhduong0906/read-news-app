@@ -1,8 +1,7 @@
 //This file is includes function of pagination.js file
 
-"use strict";
-let category = 'general'
-checkLogin();
+
+let category = 'general';
 
 showPagination(category);
 

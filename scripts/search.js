@@ -1,6 +1,6 @@
 //This file is includes function of pagination.js file
 
-"use strict";
+
 const page = "search";
 let searchKey = null;
 const paginationEl = document.querySelector('.pagination');

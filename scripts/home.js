@@ -1,4 +1,5 @@
-"use strict";
+
+
 
 const loginModalEl = document.getElementById("login-modal");
 const mainContentEl = document.getElementById("main-content");
@@ -13,5 +14,6 @@ if (!currentUser) {
 }
 logoutBtnEl.addEventListener("click", function () {
   deleteFromStorage(CURRENTKEY);
+  deleteFromStorage(SETTINGKEY);
   location.reload();
 });
